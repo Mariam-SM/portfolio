@@ -1,0 +1,14 @@
+📸 HOW TO ADD YOUR PHOTO
+=========================
+
+1. Put your photo file in this folder (assets/)
+2. Rename it to: photo.jpg
+3. That's it! The portfolio will show it automatically.
+
+If you don't add a photo, the portfolio shows a purple "MS" avatar as fallback.
+
+📄 HOW TO ADD YOUR CV
+======================
+1. Put your CV PDF in this folder (assets/)
+2. Rename it to: Mariam_Sayed_CV.pdf
+3. The "Download CV" button in the hero will work automatically.
