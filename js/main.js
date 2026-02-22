@@ -137,7 +137,7 @@ const DATA = {
                 {
                     role: "Front-end Developer Intern", company: "Elevvo Pathway",
                     period: "July 2025 – Aug 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
+                    cert: "https://drive.google.com/file/d/1LQv3ejIpbBXvtpFtf8T---zll02PgKSd/view?usp=drive_link",
                     points: [
                         "Developed responsive front-end interfaces using HTML5, CSS3, Bootstrap, and JavaScript.",
                         "Ensured cross-browser compatibility and responsive design implementation."
@@ -329,7 +329,7 @@ const DATA = {
                 {
                     role: "متدربة فرونت-إند", company: "Elevvo Pathway",
                     period: "يوليو 2025 – أغسطس 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
+                    cert: "https://drive.google.com/file/d/1LQv3ejIpbBXvtpFtf8T---zll02PgKSd/view?usp=drive_link",
                     points: [
                         "تطوير واجهات ويب متجاوبة بـ HTML5، CSS3، Bootstrap، JavaScript.",
                         "ضمان التوافق عبر المتصفحات والتصميم المتجاوب."
