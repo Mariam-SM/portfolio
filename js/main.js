@@ -33,10 +33,11 @@ const DATA = {
                 { icon: "🏅", text: "Scientific Syndicate Award — Ranked 1st in Bioinformatics (CS) Dept", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "1st", label: "Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
-                { value: "3.77", label: "GPA / 4.0", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
-                { value: "200/200", label: "Graduation Score", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
-                { value: "1100+", label: "Training Hours", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" }
+                { value: "1st", sub: "GPA 3.77 / 4.0", label: "in Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
+                { value: "200/200", label: "Graduation Project Score", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
+                { value: "7+", label: "Projects Built", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
+                { value: "1100+", label: "Training Hours", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
+                { value: "6+", label: "Programming Languages", gradient: "linear-gradient(135deg,#ec4899,#f43f5e)" }
             ],
             languages: [
                 { lang: "Arabic", level: "Native" },
@@ -51,7 +52,7 @@ const DATA = {
                 { icon: "🏗️", name: "Architecture", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns"] },
                 { icon: "🎨", name: "Front-End", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap"] },
                 { icon: "🔧", name: "DevOps & Tools", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Postman", "Swagger", "Serilog"] },
-                { icon: "💻", name: "Programming Languages", items: ["C#", "C++", "Python", "JavaScript"] }
+                { icon: "💻", name: "Programming Languages", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
         projects: {
@@ -59,7 +60,7 @@ const DATA = {
             items: [
                 {
                     id: 1, featured: true,
-                    name: "Order Management System",
+                    name: "Order Management System", icon: "📦",
                     highlight: "25+ REST endpoints",
                     desc: "Full-featured REST API built using Onion Architecture. Includes basket management, order processing, invoices, JWT-based RBAC, and Stripe payment gateway integration.",
                     tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Onion Architecture"],
@@ -68,8 +69,8 @@ const DATA = {
                 },
                 {
                     id: 2, featured: true,
-                    name: "E-Commerce Backend API",
-                    highlight: "60% faster with Redis",
+                    name: "E-Commerce Backend API", icon: "🛒",
+                    highlight: "REST API + JWT Security · 60% faster with Redis",
                     desc: "RESTful backend using Generic Repository & Unit of Work patterns. JWT auth for 500+ accounts, Stripe integration, Redis caching (60% faster response), and centralized exception handling.",
                     tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Redis"],
                     github: "https://github.com/Mariam-SM/E-Commerce",
@@ -77,16 +78,7 @@ const DATA = {
                 },
                 {
                     id: 3, featured: true,
-                    name: "EduVerse – AI E-Learning",
-                    highlight: "500+ concurrent users",
-                    desc: "Graduation project — 200/200. ASP.NET Core backend serving 500+ concurrent users, GPT-4.1 integration, 85% accuracy code similarity detection, and automated attendance tracking.",
-                    tech: ["ASP.NET Core", "Flutter", "GPT-4.1", "SQL Server"],
-                    github: "https://github.com/Mariam-SM/EduVerse",
-                    demo: null
-                },
-                {
-                    id: 4, featured: false,
-                    name: "Company Management System",
+                    name: "Company Management System", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "Web app with multi-auth (Google, Facebook, Email), KitMail/Twilio SMS recovery, and dynamic search. Built with 3-Tier Architecture and AJAX for 50% better interactivity.",
                     tech: ["MVC", "EF Core", "OAuth", "SMTP", "Twilio"],
@@ -94,8 +86,17 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
+                    id: 4, featured: false,
+                    name: "EduVerse – AI E-Learning", icon: "🎓",
+                    highlight: "500+ concurrent users",
+                    desc: "Graduation project — 200/200. ASP.NET Core backend serving 500+ concurrent users, GPT-4.1 integration, 85% accuracy code similarity detection, and automated attendance tracking.",
+                    tech: ["ASP.NET Core", "Flutter", "GPT-4.1", "SQL Server"],
+                    github: "https://github.com/Mariam-SM/EduVerse",
+                    demo: null
+                },
+                {
                     id: 5, featured: false,
-                    name: "Learnify – Course Portal",
+                    name: "Learnify – Course Portal", icon: "📚",
                     highlight: "Lecture streaming",
                     desc: "Online course portal for instructors and students with lecture streaming and enrollment features. Built using ASP.NET MVC, EF Core, and LINQ.",
                     tech: ["ASP.NET MVC", "EF Core", "SQL", "LINQ"],
@@ -104,7 +105,7 @@ const DATA = {
                 },
                 {
                     id: 6, featured: false,
-                    name: "Examination Management System",
+                    name: "Examination Management System", icon: "📝",
                     highlight: "OOP design",
                     desc: "Desktop system for managing exams and grading. Applies modular OOP and efficient data structures for result generation.",
                     tech: ["C#", "OOP", "Data Structures"],
@@ -113,7 +114,7 @@ const DATA = {
                 },
                 {
                     id: 7, featured: false,
-                    name: "Tourism in Fayoum",
+                    name: "Tourism in Fayoum", icon: "🗺️",
                     highlight: "100% cross-browser",
                     desc: "Static informational website promoting Fayoum's tourist attractions with interactive navigation and fully responsive design.",
                     tech: ["HTML5", "CSS3", "JavaScript"],
@@ -136,8 +137,8 @@ const DATA = {
                 },
                 {
                     role: "Front-end Developer Intern", company: "Elevvo Pathway",
-                    period: "July 2025 – Aug 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1LQv3ejIpbBXvtpFtf8T---zll02PgKSd/view?usp=drive_link",
+                    period: "Aug 2025 – Sep 2025", type: "training",
+                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
                     points: [
                         "Developed responsive front-end interfaces using HTML5, CSS3, Bootstrap, and JavaScript.",
                         "Ensured cross-browser compatibility and responsive design implementation."
@@ -225,10 +226,11 @@ const DATA = {
                 { icon: "🏅", text: "تكريم النقابة العلمية — الأولى على قسم الحوسبة والمعلوماتية الحيوية", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "الأولى", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
-                { value: "3.77", label: "المعدل / 4.0", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
-                { value: "200/200", label: "درجة التخرج", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
-                { value: "+1100", label: "ساعة تدريب", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" }
+                { value: "الأولى", sub: "معدل 3.77 / 4.0", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
+                { value: "200/200", label: "درجة مشروع التخرج", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
+                { value: "+7", label: "مشاريع منجزة", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
+                { value: "+1100", label: "ساعة تدريب", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
+                { value: "+6", label: "لغات برمجة", gradient: "linear-gradient(135deg,#ec4899,#f43f5e)" }
             ],
             languages: [
                 { lang: "العربية", level: "لغة أم" },
@@ -243,7 +245,7 @@ const DATA = {
                 { icon: "🏗️", name: "المعمارية", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns"] },
                 { icon: "🎨", name: "الفرونت-إند", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap"] },
                 { icon: "🔧", name: "الأدوات", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Postman", "Swagger", "Serilog"] },
-                { icon: "💻", name: "لغات البرمجة", items: ["C#", "C++", "Python", "JavaScript"] }
+                { icon: "💻", name: "لغات البرمجة", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
         projects: {
@@ -251,7 +253,7 @@ const DATA = {
             items: [
                 {
                     id: 1, featured: true,
-                    name: "نظام إدارة الطلبات",
+                    name: "نظام إدارة الطلبات", icon: "📦",
                     highlight: "25+ REST endpoint",
                     desc: "API متكامل بـ Onion Architecture. يشمل إدارة السلة، معالجة الطلبات، الفواتير، صلاحيات JWT، ودفع Stripe.",
                     tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Onion Architecture"],
@@ -260,8 +262,8 @@ const DATA = {
                 },
                 {
                     id: 2, featured: true,
-                    name: "منصة API للتجارة الإلكترونية",
-                    highlight: "أسرع 60% مع Redis",
+                    name: "منصة API للتجارة الإلكترونية", icon: "🛒",
+                    highlight: "REST API + JWT · أسرع 60% مع Redis",
                     desc: "باك-إند RESTful بـ Generic Repository و Unit of Work. JWT لحماية 500+ حساب، Stripe، Redis caching (أسرع 60%)، ومعالجة مركزية للأخطاء.",
                     tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Redis"],
                     github: "https://github.com/Mariam-SM/E-Commerce",
@@ -269,16 +271,7 @@ const DATA = {
                 },
                 {
                     id: 3, featured: true,
-                    name: "EduVerse – منصة تعلم ذكية",
-                    highlight: "+500 مستخدم متزامن",
-                    desc: "مشروع تخرج بدرجة 200/200. باك-إند يخدم 500+ مستخدم متزامن، تكامل GPT-4.1، كشف تشابه الكود بدقة 85%، وتتبع حضور آلي.",
-                    tech: ["ASP.NET Core", "Flutter", "GPT-4.1", "SQL Server"],
-                    github: "https://github.com/Mariam-SM/EduVerse",
-                    demo: null
-                },
-                {
-                    id: 4, featured: false,
-                    name: "نظام إدارة الشركات",
+                    name: "نظام إدارة الشركات", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "تطبيق ويب بتسجيل دخول متعدد (جوجل، فيسبوك، إيميل)، استعادة بالـ SMS، وبحث ديناميكي. 3-Tier Architecture مع AJAX.",
                     tech: ["MVC", "EF Core", "OAuth", "SMTP", "Twilio"],
@@ -286,8 +279,17 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
+                    id: 4, featured: false,
+                    name: "EduVerse – منصة تعلم ذكية", icon: "🎓",
+                    highlight: "+500 مستخدم متزامن",
+                    desc: "مشروع تخرج بدرجة 200/200. باك-إند يخدم 500+ مستخدم متزامن، تكامل GPT-4.1، كشف تشابه الكود بدقة 85%، وتتبع حضور آلي.",
+                    tech: ["ASP.NET Core", "Flutter", "GPT-4.1", "SQL Server"],
+                    github: "https://github.com/Mariam-SM/EduVerse",
+                    demo: null
+                },
+                {
                     id: 5, featured: false,
-                    name: "Learnify – بوابة الدورات",
+                    name: "Learnify – بوابة الدورات", icon: "📚",
                     highlight: "بث المحاضرات",
                     desc: "بوابة دورات للمدرسين والطلاب مع بث المحاضرات والتسجيل. ASP.NET MVC وـ EF Core.",
                     tech: ["ASP.NET MVC", "EF Core", "SQL", "LINQ"],
@@ -296,7 +298,7 @@ const DATA = {
                 },
                 {
                     id: 6, featured: false,
-                    name: "نظام إدارة الامتحانات",
+                    name: "نظام إدارة الامتحانات", icon: "📝",
                     highlight: "تصميم OOP",
                     desc: "نظام سطح مكتب لإدارة الامتحانات والتصحيح بتطبيق OOP معياري وهياكل بيانات فعالة.",
                     tech: ["C#", "OOP", "Data Structures"],
@@ -305,7 +307,7 @@ const DATA = {
                 },
                 {
                     id: 7, featured: false,
-                    name: "السياحة في الفيوم",
+                    name: "السياحة في الفيوم", icon: "🗺️",
                     highlight: "100% متوافق",
                     desc: "موقع معلوماتي يروج لمعالم الفيوم بتصميم متجاوب 100% مع جميع المتصفحات.",
                     tech: ["HTML5", "CSS3", "JavaScript"],
@@ -328,8 +330,8 @@ const DATA = {
                 },
                 {
                     role: "متدربة فرونت-إند", company: "Elevvo Pathway",
-                    period: "يوليو 2025 – أغسطس 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1LQv3ejIpbBXvtpFtf8T---zll02PgKSd/view?usp=drive_link",
+                    period: "أغسطس 2025 – سبتمبر 2025", type: "training",
+                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
                     points: [
                         "تطوير واجهات ويب متجاوبة بـ HTML5، CSS3، Bootstrap، JavaScript.",
                         "ضمان التوافق عبر المتصفحات والتصميم المتجاوب."
@@ -485,12 +487,13 @@ function renderAbout() {
     </div>
   `).join("");
 
-    document.getElementById("about-stats").innerHTML = a.stats.map(s => `
-    <div class="col-6">
+    document.getElementById("about-stats").innerHTML = a.stats.map((s, i) => `
+    <div class="${i < 2 ? 'col-6' : 'col-4'}">
       <div class="stat-card">
         <div class="stat-card-num" style="background:${s.gradient};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
           ${s.value}
         </div>
+        ${s.sub ? `<div class="stat-card-sub">${s.sub}</div>` : ""}
         <div class="stat-card-label">${s.label}</div>
       </div>
     </div>
@@ -536,7 +539,7 @@ function renderProjects() {
     <div class="col-md-6 col-lg-4">
       <div class="project-card reveal">
         <div class="project-card-top">
-          <div class="project-icon">📁</div>
+          <div class="project-icon">${proj.icon || "📁"}</div>
           <div class="d-flex gap-2">
             ${proj.demo ? `<a href="${proj.demo}"   target="_blank" class="proj-icon-btn demo-icon-btn" title="Live Demo">${demoSVG}</a>` : ""}
             ${proj.github ? `<a href="${proj.github}" target="_blank" class="proj-icon-btn"               title="GitHub">${githubSVG}</a>` : ""}

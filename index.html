@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+    <canvas id="snow-canvas" aria-hidden="true"></canvas>
 
     <!-- ==============================
          NAVBAR
@@ -186,17 +187,17 @@
                             <span class="code-filename">mariam.cs</span>
                         </div>
                         <div class="code-body">
-                            <span class="code-purple">var</span> <span class="code-blue">dev</span> <span class="code-white">= new</span> <span class="code-orange">Developer</span> <span class="code-white">{</span>
-                            <span class="code-blue">Name</span>     <span class="code-white">= </span><span class="code-green">"Mariam Sayed"</span><span class="code-white">,</span>
-                            <span class="code-blue">Role</span>     <span class="code-white">= </span><span class="code-green">".NET Developer"</span><span class="code-white">,</span>
-                            <span class="code-blue">Rank</span>     <span class="code-white">= </span><span class="code-green">"1st in Bioinformatics (CS) Dept"</span><span class="code-white">,</span>
-                            <span class="code-blue">Projects</span> <span class="code-white">= </span><span class="code-orange">7</span><span class="code-gray">  // shipped</span>
-                            <span class="code-blue">Stack</span>    <span class="code-white">= new[] {</span>
-                            <span class="code-green">"ASP.NET Core"</span><span class="code-white">,</span>
-                            <span class="code-green">"Entity Framework"</span><span class="code-white">,</span>
-                            <span class="code-green">"Clean Architecture"</span>
-                            <span class="code-white">}</span>
-                            <span class="code-white">};</span>
+                            <div class="code-line"><span class="code-purple">var</span> <span class="code-blue">dev</span> <span class="code-white">= new</span> <span class="code-orange">Developer</span> <span class="code-white">{</span></div>
+                            <div class="code-line"><span class="code-white">  </span><span class="code-blue">Name</span>     <span class="code-white">= </span><span class="code-green">"Mariam Sayed"</span><span class="code-white">,</span></div>
+                            <div class="code-line"><span class="code-white">  </span><span class="code-blue">Role</span>     <span class="code-white">= </span><span class="code-green">".NET Developer"</span><span class="code-white">,</span></div>
+                            <div class="code-line"><span class="code-white">  </span><span class="code-blue">Rank</span>     <span class="code-white">= </span><span class="code-green">"1st · Bioinformatics (CS)"</span><span class="code-white">,</span></div>
+                            <div class="code-line"><span class="code-white">  </span><span class="code-blue">Projects</span> <span class="code-white">= </span><span class="code-orange">7</span><span class="code-gray">  // shipped</span></div>
+                            <div class="code-line"><span class="code-white">  </span><span class="code-blue">Stack</span>    <span class="code-white">= new[] {</span></div>
+                            <div class="code-line"><span class="code-white">    </span><span class="code-green">"ASP.NET Core"</span><span class="code-white">,</span></div>
+                            <div class="code-line"><span class="code-white">    </span><span class="code-green">"Entity Framework"</span><span class="code-white">,</span></div>
+                            <div class="code-line"><span class="code-white">    </span><span class="code-green">"Clean Architecture"</span></div>
+                            <div class="code-line"><span class="code-white">  }</span></div>
+                            <div class="code-line"><span class="code-white">};</span></div>
                         </div>
                         <div class="code-footer">
                             <span style="background:#4ade80;width:8px;height:8px;border-radius:50%;display:inline-block"></span>
@@ -437,6 +438,94 @@
 
     <!-- Main JS -->
     <script src="js/main.js"></script>
+
+
+    <!-- ==============================
+         SNOW ANIMATION
+    ============================== -->
+    <script>
+        (function () {
+            const canvas = document.getElementById('snow-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let W, H, flakes = [];
+            const COUNT = 130;
+
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            function getColor() {
+                const theme = document.body.getAttribute('data-theme') || 'dark';
+                return theme === 'dark'
+                    ? 'rgba(255,255,255,VAL)'
+                    : 'rgba(139,92,246,VAL)';
+            }
+
+            function mkFlake() {
+                return {
+                    x: Math.random() * W,
+                    y: Math.random() * H - H,
+                    r: Math.random() * 2.8 + 0.6,
+                    speed: Math.random() * 0.6 + 0.25,
+                    drift: (Math.random() - 0.5) * 0.35,
+                    opacity: Math.random() * 0.55 + 0.15,
+                    wobble: Math.random() * Math.PI * 2,
+                    wobbleSpeed: Math.random() * 0.012 + 0.004,
+                };
+            }
+
+            for (let i = 0; i < COUNT; i++) {
+                const f = mkFlake();
+                f.y = Math.random() * H; // scatter initially
+                flakes.push(f);
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                flakes.forEach(f => {
+                    const col = getColor().replace('VAL', f.opacity.toFixed(2));
+                    ctx.beginPath();
+                    ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+                    ctx.fillStyle = col;
+                    ctx.fill();
+                });
+            }
+
+            function update() {
+                flakes.forEach(f => {
+                    f.wobble += f.wobbleSpeed;
+                    f.x += f.drift + Math.sin(f.wobble) * 0.35;
+                    f.y += f.speed;
+                    if (f.y > H + 10) {
+                        Object.assign(f, mkFlake());
+                        f.y = -10;
+                        f.x = Math.random() * W;
+                    }
+                    if (f.x < -10) f.x = W + 10;
+                    if (f.x > W + 10) f.x = -10;
+                });
+            }
+
+            let raf;
+            function loop() {
+                update();
+                draw();
+                raf = requestAnimationFrame(loop);
+            }
+            loop();
+
+            // Pause when tab hidden
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) cancelAnimationFrame(raf);
+                else loop();
+            });
+        })();
+    </script>
 
 </body>
 </html>
