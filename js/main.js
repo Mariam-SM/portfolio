@@ -1,5 +1,5 @@
 // ===========================
-//   DATA — كل الداتا هنا
+//   DATA 
 // ===========================
 const DATA = {
     en: {
@@ -23,10 +23,10 @@ const DATA = {
         },
         about: {
             title: "About Me", subtitle: "Who I am",
-            bio: "I'm a .NET Developer specializing in ASP.NET Core, Entity Framework Core, and Clean Architecture. I build scalable RESTful APIs, apply SOLID principles and design patterns (Repository, Unit of Work, CQRS), and work with SQL Server, JWT authentication, and SignalR. Ranked 1st in my Bioinformatics (CS) department at Fayoum University (GPA 3.77/4.0) and scored full marks on EduVerse — an AI-powered e-learning platform built with ASP.NET Core, serving 500+ concurrent users. I have 1100+ hours of hands-on .NET training through DEPI, Route Academy, and ITI.",
+            bio: ".NET Developer who engineers scalable APIs and clean-architecture backends - ASP.NET Core, EF Core, CQRS, Redis. Ranked 1st in my department at Fayoum University, with real systems serving 500+ concurrent users.",
             info: [
                 { icon: "📍", text: "Cairo, Egypt" },
-                { icon: "🎓", text: "B.Sc. Computer Science — Fayoum University (2024)" },
+                { icon: "🎓", text: "B.Sc. Computer Science - Fayoum University (2024)" },
                 { icon: "⭐", text: "GPA: 3.77 / 4.0 (94.6%) — Ranked 1st in Bioinformatics (CS) Department" },
                 { icon: "🏆", text: "Graduation Project: EduVerse — 200/200 · Full Mark" },
                 { icon: "🌐", text: "Languages: Arabic (Native) · English (Fluent)" },
@@ -137,7 +137,7 @@ const DATA = {
                 },
                 {
                     role: "Front-end Developer Intern", company: "Elevvo Pathway",
-                    period: "Aug 2025 – Sep 2025", type: "training",
+                    period: "Jul 2025 – Aug 2025", type: "training",
                     cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
                     points: [
                         "Developed responsive front-end interfaces using HTML5, CSS3, Bootstrap, and JavaScript.",
@@ -216,7 +216,7 @@ const DATA = {
         },
         about: {
             title: "عني", subtitle: "من أنا",
-            bio: "مطورة .NET متخصصة في ASP.NET Core وEntity Framework Core والـ Clean Architecture. أبني RESTful APIs قابلة للتوسع، وأطبّق SOLID ونماذج التصميم (Repository، Unit of Work، CQRS)، وأعمل مع SQL Server وJWT Authentication وSignalR. تخرجت الأولى على قسم الحوسبة والمعلوماتية الحيوية بجامعة الفيوم (3.77/4.0)، وحصلت على درجة كاملة في مشروع EduVerse — منصة تعلم ذكية بـ ASP.NET Core تخدم +500 مستخدم. خبرة +1100 ساعة تدريب عملي عبر DEPI وRoute Academy وITI.",
+            bio: "مطورة .NET أصمّم APIs قابلة للتوسع بـ ASP.NET Core وEF Core وRedis — بمعماريات نظيفة وـ CQRS. الأولى على قسمي في جامعة الفيوم، بأنظمة حقيقية تخدم +500 مستخدم متزامن.",
             info: [
                 { icon: "📍", text: "القاهرة، مصر" },
                 { icon: "🎓", text: "بكالوريوس علوم الحاسب — جامعة الفيوم (2024)" },
@@ -330,7 +330,7 @@ const DATA = {
                 },
                 {
                     role: "متدربة فرونت-إند", company: "Elevvo Pathway",
-                    period: "أغسطس 2025 – سبتمبر 2025", type: "training",
+                    period: "يوليو 2025 – أغسطس 2025", type: "training",
                     cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
                     points: [
                         "تطوير واجهات ويب متجاوبة بـ HTML5، CSS3، Bootstrap، JavaScript.",
@@ -390,7 +390,7 @@ const DATA = {
 //   STATE
 // ===========================
 let currentLang = localStorage.getItem("ms_lang") || "en";
-let currentTheme = localStorage.getItem("ms_theme") || "dark";
+let currentTheme = "dark"; // dark is always the default
 
 function t(path) {
     const keys = path.split(".");
@@ -534,37 +534,69 @@ function renderProjects() {
     <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
   </svg>`;
 
-    // ✅ FIX: each card is a col inside the parent .row g-4
-    const makeCard = (proj) => `
+    // Banner gradients — each project gets a unique palette
+    const bannerStyles = [
+        { bg: "linear-gradient(135deg, #1e0a3c 0%, #3b0764 40%, #0d1b4b 100%)", dots: "rgba(139,92,246,0.5)", dots2: "rgba(6,182,212,0.3)" },
+        { bg: "linear-gradient(135deg, #0c1a0f 0%, #052e16 40%, #0a2818 100%)", dots: "rgba(16,185,129,0.5)", dots2: "rgba(52,211,153,0.3)" },
+        { bg: "linear-gradient(135deg, #1c1008 0%, #431407 40%, #1f0a00 100%)", dots: "rgba(245,158,11,0.5)", dots2: "rgba(249,115,22,0.3)" },
+        { bg: "linear-gradient(135deg, #0a1628 0%, #0c2461 40%, #071525 100%)", dots: "rgba(59,130,246,0.5)", dots2: "rgba(99,102,241,0.3)" },
+        { bg: "linear-gradient(135deg, #1a0a2e 0%, #3b0764 40%, #150d22 100%)", dots: "rgba(168,85,247,0.5)", dots2: "rgba(236,72,153,0.3)" },
+        { bg: "linear-gradient(135deg, #001f2d 0%, #003554 40%, #012a3a 100%)", dots: "rgba(6,182,212,0.5)", dots2: "rgba(14,165,233,0.3)" },
+        { bg: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f0f23 100%)", dots: "rgba(99,102,241,0.5)", dots2: "rgba(139,92,246,0.3)" },
+    ];
+
+    const makeBanner = (proj, idx) => {
+        const style = bannerStyles[idx % bannerStyles.length];
+        return `
+        <div class="project-card-banner" style="background:${style.bg}">
+          <div class="project-card-banner-inner">
+            <!-- Abstract floating shapes -->
+            <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice">
+              <circle cx="60"  cy="30"  r="55" fill="${style.dots}"  style="filter:blur(20px)"/>
+              <circle cx="320" cy="90"  r="65" fill="${style.dots2}" style="filter:blur(25px)"/>
+              <circle cx="200" cy="60"  r="40" fill="${style.dots}"  style="filter:blur(15px);opacity:0.4"/>
+            </svg>
+            <!-- Code-like decorative text -->
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(255,255,255,0.12);position:absolute;bottom:8px;left:14px;letter-spacing:0.06em;line-height:1.6">
+              ${proj.tech.slice(0, 2).map(t => `<span>${t}</span>`).join(' · ')}
+            </div>
+          </div>
+        </div>`;
+    };
+
+    const makeCard = (proj, idx) => `
     <div class="col-md-6 col-lg-4">
       <div class="project-card reveal">
-        <div class="project-card-top">
-          <div class="project-icon">${proj.icon || "📁"}</div>
-          <div class="d-flex gap-2">
-            ${proj.demo ? `<a href="${proj.demo}"   target="_blank" class="proj-icon-btn demo-icon-btn" title="Live Demo">${demoSVG}</a>` : ""}
-            ${proj.github ? `<a href="${proj.github}" target="_blank" class="proj-icon-btn"               title="GitHub">${githubSVG}</a>` : ""}
+        ${makeBanner(proj, idx)}
+        <div class="project-card-body">
+          <div class="project-card-top">
+            <div class="project-icon">${proj.icon || "📁"}</div>
+            <div class="d-flex gap-2 align-items-start" style="padding-top:0.25rem">
+              ${proj.demo ? `<a href="${proj.demo}"   target="_blank" class="proj-icon-btn demo-icon-btn" title="Live Demo">${demoSVG}</a>` : ""}
+              ${proj.github ? `<a href="${proj.github}" target="_blank" class="proj-icon-btn"               title="GitHub">${githubSVG}</a>` : ""}
+            </div>
           </div>
+          ${proj.highlight ? `<div class="project-highlight">✦ ${proj.highlight}</div>` : ""}
+          <div class="project-name">${proj.name}</div>
+          <p class="project-desc">${proj.desc}</p>
+          <div class="project-tags">
+            ${proj.tech.map(tech => `<span class="tag">${tech}</span>`).join("")}
+          </div>
+          ${proj.demo ? `
+            <div class="project-demo-strip">
+              <a href="${proj.demo}" target="_blank" class="demo-strip-link">${demoSVG} Live Demo</a>
+            </div>` : ""}
         </div>
-        ${proj.highlight ? `<div class="project-highlight">✦ ${proj.highlight}</div>` : ""}
-        <div class="project-name">${proj.name}</div>
-        <p class="project-desc">${proj.desc}</p>
-        <div class="project-tags">
-          ${proj.tech.map(tech => `<span class="tag">${tech}</span>`).join("")}
-        </div>
-        ${proj.demo ? `
-          <div class="project-demo-strip">
-            <a href="${proj.demo}" target="_blank" class="demo-strip-link">${demoSVG} Live Demo</a>
-          </div>` : ""}
       </div>
     </div>
   `;
 
     // Featured: goes directly into the .row g-4
-    document.getElementById("projects-featured").innerHTML = featured.map(makeCard).join("");
+    document.getElementById("projects-featured").innerHTML = featured.map((p, i) => makeCard(p, i)).join("");
 
     // Rest: own row inside wrapper, with top margin to separate from featured grid
     const restWrap = document.getElementById("projects-rest");
-    restWrap.innerHTML = `<div class="row g-4" style="margin-top:1.5rem">${rest.map(makeCard).join("")}</div>`;
+    restWrap.innerHTML = `<div class="row g-4" style="margin-top:1.5rem">${rest.map((p, i) => makeCard(p, featured.length + i)).join("")}</div>`;
     restWrap.style.display = "none";
 
     const btn = document.getElementById("show-more-btn");
@@ -673,7 +705,18 @@ function renderAll() {
 // ===========================
 function observeReveal() {
     const observer = new IntersectionObserver(
-        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+        (entries) => entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                // Stagger siblings inside same row
+                const parent = e.target.closest('.row');
+                if (parent) {
+                    const siblings = [...parent.querySelectorAll('.reveal')];
+                    const idx = siblings.indexOf(e.target);
+                    e.target.style.transitionDelay = `${idx * 0.08}s`;
+                }
+            }
+        }),
         { threshold: 0.08 }
     );
     document.querySelectorAll(".reveal:not(.visible)").forEach(el => observer.observe(el));
