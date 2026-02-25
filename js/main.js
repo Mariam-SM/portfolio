@@ -119,7 +119,7 @@ const DATA = {
                     desc: "Static informational website promoting Fayoum's tourist attractions with interactive navigation and fully responsive design.",
                     tech: ["HTML5", "CSS3", "JavaScript"],
                     github: "https://github.com/Mariam-SM/Tourism-in-Fayoum",
-                    demo: null
+                    demo: "https://mariam-sm.github.io/Tourism-in-Fayoum/"
                 }
             ]
         },
@@ -312,7 +312,7 @@ const DATA = {
                     desc: "موقع معلوماتي يروج لمعالم الفيوم بتصميم متجاوب 100% مع جميع المتصفحات.",
                     tech: ["HTML5", "CSS3", "JavaScript"],
                     github: "https://github.com/Mariam-SM/Tourism-in-Fayoum",
-                    demo: null
+                    demo: "https://mariam-sm.github.io/Tourism-in-Fayoum/"
                 }
             ]
         },
@@ -823,7 +823,7 @@ function initLang() {
 
 // ===========================
 //   INIT
-
+// ===========================
 document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLang;
