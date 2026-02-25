@@ -312,16 +312,186 @@ body {
     color: var(--text-400);
 }
 
-/* Reveal animation */
+/* ===========================
+   REVEAL ANIMATIONS — Rich multi-type
+=========================== */
+
+/* Base: slide up */
 .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
     .reveal.visible {
         opacity: 1;
+        transform: none;
+    }
+
+/* Scale up from small */
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.82) translateY(20px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+    .reveal-scale.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+/* Slide from left */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+    .reveal-left.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+/* Slide from right */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+    .reveal-right.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+/* Pop: scale from big */
+.reveal-pop {
+    opacity: 0;
+    transform: scale(1.12);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+    .reveal-pop.visible {
+        opacity: 1;
+        transform: none;
+    }
+
+/* Section label pop with letter spacing */
+@keyframes labelReveal {
+    from {
+        opacity: 0;
+        letter-spacing: 0.5em;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        letter-spacing: 0.2em;
         transform: translateY(0);
+    }
+}
+
+.reveal-label {
+    opacity: 0;
+}
+
+    .reveal-label.visible {
+        animation: labelReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        opacity: 1;
+    }
+
+/* Title word-by-word split */
+@keyframes wordUp {
+    from {
+        opacity: 0;
+        transform: translateY(1.2em) rotate(3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.word-split {
+    overflow: hidden;
+    display: inline-block;
+}
+
+    .word-split .word {
+        display: inline-block;
+        opacity: 0;
+    }
+
+    .word-split.visible .word {
+        animation: wordUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+/* Stat card bounce */
+@keyframes statBounce {
+    0% {
+        opacity: 0;
+        transform: scale(0.6) translateY(30px);
+    }
+
+    70% {
+        transform: scale(1.06) translateY(-4px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal-stat {
+    opacity: 0;
+}
+
+    .reveal-stat.visible {
+        animation: statBounce 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+/* Skill card slide-in */
+@keyframes skillIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal-skill {
+    opacity: 0;
+}
+
+    .reveal-skill.visible {
+        animation: skillIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+/* Timeline item slide */
+@keyframes timelineIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal-timeline {
+    opacity: 0;
+}
+
+    .reveal-timeline.visible {
+        animation: timelineIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
 /* ===========================
@@ -1150,9 +1320,83 @@ body {
         gap: 0.6rem;
     }
 
-.show-more-wrap {
-    text-align: center;
-    margin-top: 2.5rem;
+/* Hero role typewriter cursor */
+#hero-role {
+    display: inline-block;
+    padding-right: 2px;
+}
+
+/* Hero entrance keyframes */
+@keyframes heroGreeting {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes heroName {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes heroTagline {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes heroBtns {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#hero-greeting {
+    animation: heroGreeting 0.6s ease 0.1s both;
+}
+
+#hero-name {
+    animation: heroName 0.7s cubic-bezier(0.22,1,0.36,1) 0.25s both;
+}
+
+#hero-role {
+    animation: heroGreeting 0.6s ease 0.55s both;
+}
+
+#hero-tagline {
+    animation: heroTagline 0.6s ease 0.7s both;
+}
+
+#hero-stats {
+    animation: heroBtns 0.6s ease 0.85s both;
+}
+
+.badge-available {
+    animation: heroBtns 0.5s ease 0s both;
 }
 
 /* ===========================
@@ -1708,4 +1952,9 @@ footer {
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(180deg, #8B5CF6, #6D28D9);
     border-radius: 3px;
+}
+
+.show-more-wrap {
+    text-align: center;
+    margin-top: 2.5rem;
 }

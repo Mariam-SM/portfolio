@@ -442,11 +442,30 @@ function renderHero() {
     const h = t("hero");
     document.getElementById("hero-greeting").textContent = h.greeting;
     document.getElementById("hero-name").textContent = h.name;
-    document.getElementById("hero-role").textContent = h.role;
     document.getElementById("hero-tagline").textContent = h.tagline;
     document.getElementById("hero-cta-projects").textContent = h.cta_projects;
     document.getElementById("hero-cta-contact").textContent = h.cta_contact;
     document.getElementById("hero-cta-cv").textContent = h.cta_cv;
+
+    // Typewriter effect for role
+    const roleEl = document.getElementById("hero-role");
+    roleEl.textContent = "";
+    roleEl.style.borderRight = "2px solid var(--primary-light)";
+    let i = 0;
+    const fullText = h.role;
+    clearInterval(window._typewriterInterval);
+    window._typewriterInterval = setInterval(() => {
+        roleEl.textContent = fullText.slice(0, ++i);
+        if (i >= fullText.length) {
+            clearInterval(window._typewriterInterval);
+            // Blinking cursor
+            let blink = true;
+            window._blinkInterval = setInterval(() => {
+                roleEl.style.borderRight = blink ? "2px solid var(--primary-light)" : "2px solid transparent";
+                blink = !blink;
+            }, 530);
+        }
+    }, 60);
 
     document.getElementById("hero-stats").innerHTML = h.stats.map(s => `
     <div>
@@ -458,8 +477,12 @@ function renderHero() {
 
 function renderAbout() {
     const a = t("about");
-    document.getElementById("about-subtitle").textContent = a.subtitle;
-    document.getElementById("about-title").textContent = a.title;
+    const subtitleEl = document.getElementById("about-subtitle");
+    const titleEl = document.getElementById("about-title");
+    subtitleEl.textContent = a.subtitle;
+    titleEl.textContent = a.title;
+    subtitleEl.classList.add("reveal-label");
+    titleEl.classList.add("reveal-scale");
     document.getElementById("about-bio").textContent = a.bio;
 
     const certSVGAbout = `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -469,10 +492,10 @@ function renderAbout() {
     const fciCertHref = "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link";
     const certBtn = `<a href="${fciCertHref}" target="_blank" class="cert-btn cert-btn-about">${certSVGAbout} ${fciCertLabel}</a>`;
 
-    document.getElementById("about-info").innerHTML = a.info.filter(i => !i.href).map(i => {
+    document.getElementById("about-info").innerHTML = a.info.filter(i => !i.href).map((i, idx) => {
         const isGPA = i.text.includes("3.77") || i.text.includes("GPA") || i.text.includes("المعدل");
         return `
-    <div class="about-info-item${isGPA ? " about-info-gpa-row" : ""}">
+    <div class="about-info-item reveal-left${isGPA ? " about-info-gpa-row" : ""}" style="transition-delay:${idx * 0.08}s">
       <span class="about-info-icon">${i.icon}</span>
       <span class="about-info-text">${i.text}</span>
       ${isGPA ? certBtn : ""}
@@ -480,7 +503,7 @@ function renderAbout() {
     }).join("");
 
     document.getElementById("about-langs").innerHTML = a.languages.map(l => `
-    <div class="lang-chip">
+    <div class="lang-chip reveal-pop">
       <span class="lang-chip-name">${l.lang}</span>
       <span class="lang-chip-sep">·</span>
       <span class="lang-chip-level">${l.level}</span>
@@ -489,7 +512,7 @@ function renderAbout() {
 
     document.getElementById("about-stats").innerHTML = a.stats.map((s, i) => `
     <div class="${i < 2 ? 'col-6' : 'col-4'}">
-      <div class="stat-card">
+      <div class="stat-card reveal-stat" style="animation-delay:${i * 0.1}s">
         <div class="stat-card-num" style="background:${s.gradient};-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
           ${s.value}
         </div>
@@ -502,12 +525,16 @@ function renderAbout() {
 
 function renderSkills() {
     const s = t("skills");
-    document.getElementById("skills-subtitle").textContent = s.subtitle;
-    document.getElementById("skills-title").textContent = s.title;
+    const subtitleEl = document.getElementById("skills-subtitle");
+    const titleEl = document.getElementById("skills-title");
+    subtitleEl.textContent = s.subtitle;
+    titleEl.textContent = s.title;
+    subtitleEl.classList.add("reveal-label");
+    titleEl.classList.add("reveal-scale");
 
-    document.getElementById("skills-grid").innerHTML = s.categories.map(cat => `
+    document.getElementById("skills-grid").innerHTML = s.categories.map((cat, i) => `
     <div class="col-md-6 col-lg-4">
-      <div class="skill-card reveal">
+      <div class="skill-card reveal-skill" style="animation-delay:${i * 0.1}s">
         <div class="skill-icon">${cat.icon}</div>
         <div class="skill-name">${cat.name}</div>
         <div class="tags-wrap">
@@ -520,8 +547,12 @@ function renderSkills() {
 
 function renderProjects() {
     const p = t("projects");
-    document.getElementById("projects-subtitle").textContent = p.subtitle;
-    document.getElementById("projects-title").textContent = p.title;
+    const subtitleEl = document.getElementById("projects-subtitle");
+    const titleEl = document.getElementById("projects-title");
+    subtitleEl.textContent = p.subtitle;
+    titleEl.textContent = p.title;
+    subtitleEl.classList.add("reveal-label");
+    titleEl.classList.add("reveal-scale");
 
     const featured = p.items.filter(x => x.featured);
     const rest = p.items.filter(x => !x.featured);
@@ -613,8 +644,12 @@ function renderProjects() {
 
 function renderExperience() {
     const e = t("experience");
-    document.getElementById("exp-subtitle").textContent = e.subtitle;
-    document.getElementById("exp-title").textContent = e.title;
+    const subtitleEl = document.getElementById("exp-subtitle");
+    const titleEl = document.getElementById("exp-title");
+    subtitleEl.textContent = e.subtitle;
+    titleEl.textContent = e.title;
+    subtitleEl.classList.add("reveal-label");
+    titleEl.classList.add("reveal-scale");
 
     const certSVG = `<svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
@@ -623,8 +658,8 @@ function renderExperience() {
     const certLabel = currentLang === "ar" ? "الشهادة" : "Certificate";
     const cert2Label = currentLang === "ar" ? "شهادة Business English" : "Business English Cert";
 
-    document.getElementById("timeline").innerHTML = e.items.map(item => `
-    <div class="timeline-item reveal">
+    document.getElementById("timeline").innerHTML = e.items.map((item, idx) => `
+    <div class="timeline-item reveal-timeline" style="animation-delay:${idx * 0.12}s">
       <div class="timeline-dot ${item.type}">${item.type === "work" ? "💼" : "📚"}</div>
       <div class="timeline-content">
         <div class="timeline-header">
@@ -656,8 +691,12 @@ function renderExperience() {
 
 function renderContact() {
     const c = t("contact");
-    document.getElementById("contact-subtitle").textContent = c.subtitle;
-    document.getElementById("contact-title").textContent = c.title;
+    const subtitleEl = document.getElementById("contact-subtitle");
+    const titleEl = document.getElementById("contact-title");
+    subtitleEl.textContent = c.subtitle;
+    titleEl.textContent = c.title;
+    subtitleEl.classList.add("reveal-label");
+    titleEl.classList.add("reveal-scale");
     document.getElementById("contact-description").textContent = c.description;
 
     document.getElementById("contact-info").innerHTML = c.info.map(i => `
@@ -704,22 +743,26 @@ function renderAll() {
 //   SCROLL ANIMATIONS
 // ===========================
 function observeReveal() {
+    const allSelectors = ".reveal, .reveal-scale, .reveal-left, .reveal-right, .reveal-pop, .reveal-label, .word-split, .reveal-stat, .reveal-skill, .reveal-timeline";
     const observer = new IntersectionObserver(
         (entries) => entries.forEach(e => {
             if (e.isIntersecting) {
-                e.target.classList.add("visible");
-                // Stagger siblings inside same row
-                const parent = e.target.closest('.row');
+                // Stagger siblings inside same parent
+                const parent = e.target.closest('.row, .timeline, .about-stats-wrap, #skills-grid');
                 if (parent) {
-                    const siblings = [...parent.querySelectorAll('.reveal')];
+                    const siblings = [...parent.querySelectorAll(':scope > * > [class*="reveal"], :scope > [class*="reveal"]')];
                     const idx = siblings.indexOf(e.target);
-                    e.target.style.transitionDelay = `${idx * 0.08}s`;
+                    if (idx > -1) {
+                        e.target.style.animationDelay = `${idx * 0.1}s`;
+                        e.target.style.transitionDelay = `${idx * 0.1}s`;
+                    }
                 }
+                e.target.classList.add("visible");
             }
         }),
-        { threshold: 0.08 }
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
-    document.querySelectorAll(".reveal:not(.visible)").forEach(el => observer.observe(el));
+    document.querySelectorAll(`${allSelectors}:not(.visible)`).forEach(el => observer.observe(el));
 }
 
 // ===========================
@@ -780,7 +823,7 @@ function initLang() {
 
 // ===========================
 //   INIT
-// ===========================
+
 document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLang;
