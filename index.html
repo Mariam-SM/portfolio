@@ -98,7 +98,7 @@
                                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                             <div class="photo-ring"></div>
                             <!-- Fallback avatar shown if no photo yet -->
-                            <div style="display:none;width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A78BFA);align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff">
+                            <div style="display:none;width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,#E8A0BF,#C9B8E8);align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff">
                                 MS
                             </div>
                         </div>
@@ -173,7 +173,7 @@
                              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
                         <div class="photo-ring"></div>
                         <!-- Fallback avatar -->
-                        <div style="display:none;width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#7C3AED,#A78BFA);align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:#fff;border:3px solid #7C3AED">
+                        <div style="display:none;width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#E8A0BF,#C9B8E8);align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:4rem;font-weight:800;color:#fff;border:3px solid #E8A0BF">
                             MS
                         </div>
                     </div>
@@ -460,10 +460,10 @@
             window.addEventListener('resize', resize);
 
             function getColor() {
-                const theme = document.body.getAttribute('data-theme') || 'dark';
+                const theme = document.documentElement.getAttribute('data-theme') || 'dark';
                 return theme === 'dark'
-                    ? 'rgba(255,255,255,VAL)'
-                    : 'rgba(139,92,246,VAL)';
+                    ? 'rgba(232,160,191,VAL)'
+                    : 'rgba(201,123,139,VAL)';
             }
 
             function mkFlake() {

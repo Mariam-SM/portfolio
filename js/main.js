@@ -33,7 +33,7 @@ const DATA = {
                 { icon: "🏅", text: "Scientific Syndicate Award — Ranked 1st in Bioinformatics (CS) Dept", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "1st", sub: "GPA 3.77 / 4.0", label: "in Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
+                { value: "1st", sub: "GPA 3.77 / 4.0", label: "in Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#E8A0BF,#C9B8E8)" },
                 { value: "200/200", label: "Graduation Project Score", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
                 { value: "7+", label: "Projects Built", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
                 { value: "1100+", label: "Training Hours", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
@@ -226,7 +226,7 @@ const DATA = {
                 { icon: "🏅", text: "تكريم النقابة العلمية — الأولى على قسم الحوسبة والمعلوماتية الحيوية", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "الأولى", sub: "معدل 3.77 / 4.0", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
+                { value: "الأولى", sub: "معدل 3.77 / 4.0", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#E8A0BF,#C9B8E8)" },
                 { value: "200/200", label: "درجة مشروع التخرج", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
                 { value: "+7", label: "مشاريع منجزة", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
                 { value: "+1100", label: "ساعة تدريب", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
