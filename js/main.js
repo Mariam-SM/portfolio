@@ -10,7 +10,7 @@ const DATA = {
         hero: {
             greeting: "Hi, I'm",
             name: "Mariam Sayed",
-            role: ".NET Developer",
+            role: "Full Stack (.NET + Angular) Developer",
             tagline: "Building scalable backends & clean architectures.",
             cta_projects: "View Projects",
             cta_contact: "Contact Me",
@@ -23,19 +23,19 @@ const DATA = {
         },
         about: {
             title: "About Me", subtitle: "Who I am",
-            bio: ".NET Developer who engineers scalable APIs and clean-architecture backends - ASP.NET Core, EF Core, CQRS, Redis. Ranked 1st in my department at Fayoum University, with real systems serving 500+ concurrent users.",
+            bio: "Full Stack Developer specializing in ASP.NET Core and Angular - building scalable RESTful APIs and responsive SPAs with Clean Architecture, CQRS, and Redis. Ranked 1st in my department at Fayoum University.",
             info: [
                 { icon: "📍", text: "Cairo, Egypt" },
-                { icon: "🎓", text: "B.Sc. Computer Science - Fayoum University (2024)" },
+                { icon: "🎓", text: "B.Sc. Computer Science - Fayoum University (2025)" },
                 { icon: "⭐", text: "GPA: 3.77 / 4.0 (94.6%) — Ranked 1st in Bioinformatics (CS) Department" },
-                { icon: "🏆", text: "Graduation Project: EduVerse — 200/200 · Full Mark" },
+                { icon: "🏆", text: "Graduation Project: 200/200 · Full Mark" },
                 { icon: "🌐", text: "Languages: Arabic (Native) · English (Fluent)" },
                 { icon: "🏅", text: "Scientific Syndicate Award — Ranked 1st in Bioinformatics (CS) Dept", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "1st", sub: "GPA 3.77 / 4.0", label: "in Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#E8A0BF,#C9B8E8)" },
+                { value: "1st", sub: "GPA 3.77 / 4.0", label: "in Bioinformatics (CS) Dept", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
                 { value: "200/200", label: "Graduation Project Score", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
-                { value: "7+", label: "Projects Built", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
+                { value: "9+", label: "Projects Built", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
                 { value: "1100+", label: "Training Hours", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
                 { value: "6+", label: "Programming Languages", gradient: "linear-gradient(135deg,#ec4899,#f43f5e)" }
             ],
@@ -48,10 +48,11 @@ const DATA = {
             title: "Skills", subtitle: "Technologies I work with",
             categories: [
                 { icon: "🖥️", name: "Back-End", items: ["C#", "ASP.NET Core", ".NET MVC", "Web API", "JWT", "Identity Framework", "AutoMapper", "SignalR", "Hangfire"] },
-                { icon: "🗄️", name: "Database & ORM", items: ["SQL Server", "LINQ", "Entity Framework Core", "EF Core", "Dapper", "Redis"] },
-                { icon: "🏗️", name: "Architecture", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns"] },
-                { icon: "🎨", name: "Front-End", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap"] },
-                { icon: "🔧", name: "DevOps & Tools", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Postman", "Swagger", "Serilog"] },
+                { icon: "🎨", name: "Front-End", items: ["Angular 21", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "Bootstrap"] },
+                { icon: "🗄️", name: "Database & ORM", items: ["SQL Server", "LINQ", "Entity Framework Core", "Dapper", "Redis"] },
+                { icon: "🏗️", name: "Architecture & Design", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "3-Tier Architecture", "CQRS", "SOLID Principles", "Design Patterns", "Repository Pattern", "Unit of Work"] },
+                { icon: "🎨", name: "Front-End", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "TypeScript", "Angular"] },
+                { icon: "🔧", name: "DevOps & Tools", items: ["Git", "GitHub", "Postman", "Swagger", "Serilog"] },
                 { icon: "💻", name: "Programming Languages", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
@@ -60,15 +61,34 @@ const DATA = {
             items: [
                 {
                     id: 1, featured: true,
+                    name: "Store Manager System", icon: "🏪",
+                    highlight: "Full Stack · Clean Architecture + CQRS",
+                    desc: "Full-stack system: ASP.NET Core 10 REST API with Clean Architecture, CQRS, and MediatR + Angular 21 SPA with signals, OnPush change detection, and feature-based architecture. JWT with claims-based authorization, granular permission guards on API and Angular routes, product lifecycle with inline status changes, soft delete, and full audit history.",
+                    tech: ["ASP.NET Core 10", "Angular 21", "Clean Architecture", "CQRS", "EF Core", "JWT", "Tailwind CSS"],
+                    github: "https://github.com/Mariam-SM/Store-Manager",
+                    demo: null,
+                    status: "In Progress"
+                },
+                {
+                    id: 2, featured: true,
+                    name: "PetCore", icon: "🐾",
+                    highlight: "Full pet care ecosystem API",
+                    desc: "Comprehensive backend API ecosystem for pet care management. Covers pet & vet management, appointment booking, product marketplace with hierarchical category filtering, JWT-based auth with Owner & Vet roles, and chatbot integration.",
+                    tech: ["ASP.NET Core", "Clean Architecture", "EF Core", "JWT", "Redis", "CQRS"],
+                    github: "https://github.com/Mariam-SM/PetCore",
+                    demo: null,
+                },
+                {
+                    id: 3, featured: true,
                     name: "Order Management System", icon: "📦",
                     highlight: "25+ REST endpoints",
-                    desc: "Full-featured REST API built using Onion Architecture. Includes basket management, order processing, invoices, JWT-based RBAC, and Stripe payment gateway integration.",
-                    tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Onion Architecture"],
+                    desc: "Full-featured REST API built using Clean Architecture. Includes basket management, order processing, invoices, JWT-based RBAC, and Stripe payment gateway integration.",
+                    tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Clean Architecture"],
                     github: "https://github.com/Mariam-SM/Order_Management_System",
                     demo: null
                 },
                 {
-                    id: 2, featured: true,
+                    id: 4, featured: false,
                     name: "E-Commerce Backend API", icon: "🛒",
                     highlight: "REST API + JWT Security · 60% faster with Redis",
                     desc: "RESTful backend using Generic Repository & Unit of Work patterns. JWT auth for 500+ accounts, Stripe integration, Redis caching (60% faster response), and centralized exception handling.",
@@ -77,7 +97,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 3, featured: true,
+                    id: 5, featured: false,
                     name: "Company Management System", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "Web app with multi-auth (Google, Facebook, Email), KitMail/Twilio SMS recovery, and dynamic search. Built with 3-Tier Architecture and AJAX for 50% better interactivity.",
@@ -86,7 +106,7 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
-                    id: 4, featured: false,
+                    id: 6, featured: false,
                     name: "EduVerse – AI E-Learning", icon: "🎓",
                     highlight: "500+ concurrent users",
                     desc: "Graduation project — 200/200. ASP.NET Core backend serving 500+ concurrent users, GPT-4.1 integration, 85% accuracy code similarity detection, and automated attendance tracking.",
@@ -95,7 +115,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 5, featured: false,
+                    id: 7, featured: false,
                     name: "Learnify – Course Portal", icon: "📚",
                     highlight: "Lecture streaming",
                     desc: "Online course portal for instructors and students with lecture streaming and enrollment features. Built using ASP.NET MVC, EF Core, and LINQ.",
@@ -104,7 +124,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 6, featured: false,
+                    id: 8, featured: false,
                     name: "Examination Management System", icon: "📝",
                     highlight: "OOP design",
                     desc: "Desktop system for managing exams and grading. Applies modular OOP and efficient data structures for result generation.",
@@ -113,7 +133,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 7, featured: false,
+                    id: 9, featured: false,
                     name: "Tourism in Fayoum", icon: "🗺️",
                     highlight: "100% cross-browser",
                     desc: "Static informational website promoting Fayoum's tourist attractions with interactive navigation and fully responsive design.",
@@ -127,21 +147,20 @@ const DATA = {
             title: "Experience & Training", subtitle: "My journey",
             items: [
                 {
-                    role: "CS50 Instructor", company: "ReCode Academy",
-                    period: "Oct 2025 – Feb 2026", type: "work",
+                    role: "Full Stack Intern", company: "DBS MENA",
+                    period: "Apr 2026 – Present", type: "work",
                     cert: null,
                     points: [
-                        "Delivered instruction on CS fundamentals, Python, SQL, C++, OOP, and Data Structures.",
-                        "Taught web development (HTML/CSS), Git/GitHub, unit testing, and problem-solving."
+                        "Developing a full-stack application using ASP.NET Core and Angular, with hands-on experience in end-to-end development."
                     ]
                 },
                 {
-                    role: "Front-end Developer Intern", company: "Elevvo Pathway",
-                    period: "Jul 2025 – Aug 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
+                    role: "CS50 Course Instructor", company: "ReCode Academy",
+                    period: "Oct 2025 – Feb 2026", type: "work",
+                    cert: null,
                     points: [
-                        "Developed responsive front-end interfaces using HTML5, CSS3, Bootstrap, and JavaScript.",
-                        "Ensured cross-browser compatibility and responsive design implementation."
+                        "Delivered CS50 curriculum to 20+ students, designing exercises and mentoring sessions.",
+                        "Improved student comprehension, problem-solving confidence, and course completion engagement."
                     ]
                 },
                 {
@@ -180,8 +199,8 @@ const DATA = {
             description: "I'm currently open to new opportunities. Feel free to reach out via any of the channels below!",
             info: [
                 { icon: "✉️", label: "Email", value: "mariam.sayed.dev@gmail.com", href: "mailto:mariam.sayed.dev@gmail.com" },
-                { icon: "📞", label: "Phone", value: "+20 155 102 6115", href: "tel:+201551026115" },
-                { icon: "📍", label: "Location", value: "Cairo, Egypt", href: null }
+                { icon: "📞", label: "Phone", value: "+20 100 745 6707", href: "tel:+201007456707" },
+                { icon: "📍", label: "Location", value: "Nasr City, Cairo, Egypt", href: null }
             ],
             socials: [
                 { label: "GitHub", href: "https://github.com/Mariam-SM", icon: "github" },
@@ -203,7 +222,7 @@ const DATA = {
         hero: {
             greeting: "مرحباً، أنا",
             name: "مريم سيد",
-            role: "مطورة .NET",
+            role: "مطورة Full Stack (.NET + Angular)",
             tagline: "أبني باك-إند قابل للتوسع ومعماريات نظيفة.",
             cta_projects: "عرض المشاريع",
             cta_contact: "تواصل معي",
@@ -216,19 +235,19 @@ const DATA = {
         },
         about: {
             title: "عني", subtitle: "من أنا",
-            bio: "مطورة .NET أصمّم APIs قابلة للتوسع بـ ASP.NET Core وEF Core وRedis — بمعماريات نظيفة وـ CQRS. الأولى على قسمي في جامعة الفيوم، بأنظمة حقيقية تخدم +500 مستخدم متزامن.",
+            bio: "مطورةمطورة Full Stack متخصصة في ASP.NET Core وAngular — أبني APIs قابلة للتوسع وتطبيقات SPA بـ Clean Architecture وCQRS وRedis. الأولى على قسمي في جامعة الفيوم.",
             info: [
-                { icon: "📍", text: "القاهرة، مصر" },
-                { icon: "🎓", text: "بكالوريوس علوم الحاسب — جامعة الفيوم (2024)" },
+                { icon: "📍", text: "مدينة نصر، القاهرة، مصر" },
+                { icon: "🎓", text: "بكالوريوس علوم الحاسب — جامعة الفيوم (2025)" },
                 { icon: "⭐", text: "المعدل: 3.77 / 4.0 (94.6%) — الأولى على قسم الحوسبة والمعلوماتية الحيوية التابع لقسم علوم حاسب" },
-                { icon: "🏆", text: "مشروع التخرج: EduVerse — 200/200 (درجة كاملة)" },
+                { icon: "🏆", text: "مشروع التخرج: 200/200 (درجة كاملة)" },
                 { icon: "🌐", text: "اللغات: العربية (أم) · الإنجليزية (طلاقة)" },
                 { icon: "🏅", text: "تكريم النقابة العلمية — الأولى على قسم الحوسبة والمعلوماتية الحيوية", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
             ],
             stats: [
-                { value: "الأولى", sub: "معدل 3.77 / 4.0", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#E8A0BF,#C9B8E8)" },
+                { value: "الأولى", sub: "معدل 3.77 / 4.0", label: "على قسم الحوسبة والمعلوماتية الحيوية", gradient: "linear-gradient(135deg,#7C3AED,#A78BFA)" },
                 { value: "200/200", label: "درجة مشروع التخرج", gradient: "linear-gradient(135deg,#10b981,#14b8a6)" },
-                { value: "+7", label: "مشاريع منجزة", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
+                { value: "+9", label: "مشاريع منجزة", gradient: "linear-gradient(135deg,#F59E0B,#f97316)" },
                 { value: "+1100", label: "ساعة تدريب", gradient: "linear-gradient(135deg,#3b82f6,#06b6d4)" },
                 { value: "+6", label: "لغات برمجة", gradient: "linear-gradient(135deg,#ec4899,#f43f5e)" }
             ],
@@ -241,10 +260,11 @@ const DATA = {
             title: "المهارات", subtitle: "التقنيات التي أعمل بها",
             categories: [
                 { icon: "🖥️", name: "الباك-إند", items: ["C#", "ASP.NET Core", ".NET MVC", "Web API", "JWT", "Identity Framework", "AutoMapper", "SignalR", "Hangfire"] },
-                { icon: "🗄️", name: "قواعد البيانات", items: ["SQL Server", "LINQ", "Entity Framework Core", "EF Core", "Dapper", "Redis"] },
-                { icon: "🏗️", name: "المعمارية", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns"] },
-                { icon: "🎨", name: "الفرونت-إند", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap"] },
-                { icon: "🔧", name: "الأدوات", items: ["Git", "GitHub", "GitHub Actions", "CI/CD", "Postman", "Swagger", "Serilog"] },
+                { icon: "🎨", name: "الفرونت-إند", items: ["Angular 21", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "Bootstrap"] },
+                { icon: "🗄️", name: "قواعد البيانات", items: ["SQL Server", "LINQ", "Entity Framework Core", "Dapper", "Redis"] },
+                { icon: "🏗️", name: "المعمارية والتصميم", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "3-Tier Architecture", "CQRS", "SOLID Principles", "Design Patterns", "Repository Pattern", "Unit of Work"] },
+                { icon: "🎨", name: "الفرونت-إند", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "TypeScript", "Angular"] },
+                { icon: "🔧", name: "الأدوات", items: ["Git", "GitHub", "Postman", "Swagger", "Serilog"] },
                 { icon: "💻", name: "لغات البرمجة", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
@@ -253,15 +273,34 @@ const DATA = {
             items: [
                 {
                     id: 1, featured: true,
+                    name: "نظام إدارة المتجر", icon: "🏪",
+                    highlight: "Full Stack · Clean Architecture + CQRS",
+                    desc: "نظام Full Stack: ASP.NET Core 10 بـ Clean Architecture وCQRS وMediatR + Angular 21 بـ Signals وOnPush ومعمارية قائمة على الـ Features. JWT بصلاحيات تفصيلية على الـ API وRoutes، وإدارة دورة حياة المنتج مع تغيير الحالة، Soft Delete، وسجل تدقيق كامل.",
+                    tech: ["ASP.NET Core 10", "Angular 21", "Clean Architecture", "CQRS", "EF Core", "JWT", "Tailwind CSS"],
+                    github: "https://github.com/Mariam-SM/Store-Manager",
+                    demo: null,
+                },
+                {
+                    id: 2, featured: true,
+                    name: "PetCore", icon: "🐾",
+                    highlight: "نظام متكامل لرعاية الحيوانات",
+                    desc: "API شامل لإدارة منظومة رعاية الحيوانات الأليفة. يغطي إدارة الحيوانات والأطباء، حجز المواعيد، سوق المنتجات بتصفية هرمية، JWT بأدوار Owner وVet، وتكامل chatbot.",
+                    tech: ["ASP.NET Core", "Clean Architecture", "EF Core", "JWT", "Redis", "CQRS"],
+                    github: "https://github.com/Mariam-SM/PetCore",
+                    demo: null,
+                    status: "In Progress"
+                },
+                {
+                    id: 3, featured: true,
                     name: "نظام إدارة الطلبات", icon: "📦",
                     highlight: "25+ REST endpoint",
-                    desc: "API متكامل بـ Onion Architecture. يشمل إدارة السلة، معالجة الطلبات، الفواتير، صلاحيات JWT، ودفع Stripe.",
-                    tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Onion Architecture"],
+                    desc: "API متكامل بـ Clean Architecture. يشمل إدارة السلة، معالجة الطلبات، الفواتير، صلاحيات JWT، ودفع Stripe.",
+                    tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Clean Architecture"],
                     github: "https://github.com/Mariam-SM/Order_Management_System",
                     demo: null
                 },
                 {
-                    id: 2, featured: true,
+                    id: 4, featured: false,
                     name: "منصة API للتجارة الإلكترونية", icon: "🛒",
                     highlight: "REST API + JWT · أسرع 60% مع Redis",
                     desc: "باك-إند RESTful بـ Generic Repository و Unit of Work. JWT لحماية 500+ حساب، Stripe، Redis caching (أسرع 60%)، ومعالجة مركزية للأخطاء.",
@@ -270,7 +309,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 3, featured: true,
+                    id: 5, featured: false,
                     name: "نظام إدارة الشركات", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "تطبيق ويب بتسجيل دخول متعدد (جوجل، فيسبوك، إيميل)، استعادة بالـ SMS، وبحث ديناميكي. 3-Tier Architecture مع AJAX.",
@@ -279,7 +318,7 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
-                    id: 4, featured: false,
+                    id: 6, featured: false,
                     name: "EduVerse – منصة تعلم ذكية", icon: "🎓",
                     highlight: "+500 مستخدم متزامن",
                     desc: "مشروع تخرج بدرجة 200/200. باك-إند يخدم 500+ مستخدم متزامن، تكامل GPT-4.1، كشف تشابه الكود بدقة 85%، وتتبع حضور آلي.",
@@ -288,7 +327,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 5, featured: false,
+                    id: 7, featured: false,
                     name: "Learnify – بوابة الدورات", icon: "📚",
                     highlight: "بث المحاضرات",
                     desc: "بوابة دورات للمدرسين والطلاب مع بث المحاضرات والتسجيل. ASP.NET MVC وـ EF Core.",
@@ -297,7 +336,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 6, featured: false,
+                    id: 8, featured: false,
                     name: "نظام إدارة الامتحانات", icon: "📝",
                     highlight: "تصميم OOP",
                     desc: "نظام سطح مكتب لإدارة الامتحانات والتصحيح بتطبيق OOP معياري وهياكل بيانات فعالة.",
@@ -306,7 +345,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 7, featured: false,
+                    id: 9, featured: false,
                     name: "السياحة في الفيوم", icon: "🗺️",
                     highlight: "100% متوافق",
                     desc: "موقع معلوماتي يروج لمعالم الفيوم بتصميم متجاوب 100% مع جميع المتصفحات.",
@@ -320,21 +359,20 @@ const DATA = {
             title: "الخبرة والتدريب", subtitle: "مسيرتي",
             items: [
                 {
+                    role: "متدربة Full Stack", company: "DBS MENA",
+                    period: "أبريل 2026 – الآن", type: "work",
+                    cert: null,
+                    points: [
+                        "تطوير تطبيق Full Stack بـ ASP.NET Core وAngular، مع خبرة عملية في التطوير الشامل عبر دورة حياة المنتج الكاملة."
+                    ]
+                },
+                {
                     role: "مدرّسة CS50", company: "ReCode Academy",
                     period: "أكتوبر 2025 – فبراير 2026", type: "work",
                     cert: null,
                     points: [
-                        "تدريس أساسيات علوم الحاسب، Python، SQL، C++، OOP، وهياكل البيانات.",
-                        "تعليم تطوير الويب، Git/GitHub، اختبار الوحدات، وحل المشكلات."
-                    ]
-                },
-                {
-                    role: "متدربة فرونت-إند", company: "Elevvo Pathway",
-                    period: "يوليو 2025 – أغسطس 2025", type: "training",
-                    cert: "https://drive.google.com/file/d/1Q54McySnn62JFpfOFY2oODjTrrzJNjFA/view?usp=drive_link",
-                    points: [
-                        "تطوير واجهات ويب متجاوبة بـ HTML5، CSS3، Bootstrap، JavaScript.",
-                        "ضمان التوافق عبر المتصفحات والتصميم المتجاوب."
+                        "تدريس منهج CS50 لأكثر من 20 طالباً مع تصميم تمارين وجلسات إرشادية.",
+                        "تحسين فهم الطلاب وثقتهم في حل المشكلات ومعدلات إتمام الدورة."
                     ]
                 },
                 {
@@ -373,8 +411,8 @@ const DATA = {
             description: "أنا متاحة حالياً لفرص عمل جديدة. تواصل معي عبر أي من القنوات أدناه!",
             info: [
                 { icon: "✉️", label: "البريد الإلكتروني", value: "mariam.sayed.dev@gmail.com", href: "mailto:mariam.sayed.dev@gmail.com" },
-                { icon: "📞", label: "الهاتف", value: "+20 155 102 6115", href: "tel:+201551026115" },
-                { icon: "📍", label: "الموقع", value: "القاهرة، مصر", href: null }
+                { icon: "📞", label: "الهاتف", value: "+20 100 745 6707", href: "tel:+201007456707" },
+                { icon: "📍", label: "الموقع", value: "مدينة نصر، القاهرة، مصر", href: null }
             ],
             socials: [
                 { label: "GitHub", href: "https://github.com/Mariam-SM", icon: "github" },
@@ -406,8 +444,6 @@ function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     const btn = document.getElementById("theme-btn");
     if (!btn) return;
-    // Sun icon = currently dark → click to go light
-    // Moon icon = currently light → click to go dark
     btn.innerHTML = theme === "dark"
         ? `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <circle cx="12" cy="12" r="5"/><path stroke-linecap="round" d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
@@ -447,7 +483,6 @@ function renderHero() {
     document.getElementById("hero-cta-contact").textContent = h.cta_contact;
     document.getElementById("hero-cta-cv").textContent = h.cta_cv;
 
-    // Typewriter effect for role
     const roleEl = document.getElementById("hero-role");
     roleEl.textContent = "";
     roleEl.style.borderRight = "2px solid var(--primary-light)";
@@ -458,7 +493,6 @@ function renderHero() {
         roleEl.textContent = fullText.slice(0, ++i);
         if (i >= fullText.length) {
             clearInterval(window._typewriterInterval);
-            // Blinking cursor
             let blink = true;
             window._blinkInterval = setInterval(() => {
                 roleEl.style.borderRight = blink ? "2px solid var(--primary-light)" : "2px solid transparent";
@@ -565,7 +599,6 @@ function renderProjects() {
     <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
   </svg>`;
 
-    // Banner gradients — each project gets a unique palette
     const bannerStyles = [
         { bg: "linear-gradient(135deg, #1e0a3c 0%, #3b0764 40%, #0d1b4b 100%)", dots: "rgba(139,92,246,0.5)", dots2: "rgba(6,182,212,0.3)" },
         { bg: "linear-gradient(135deg, #0c1a0f 0%, #052e16 40%, #0a2818 100%)", dots: "rgba(16,185,129,0.5)", dots2: "rgba(52,211,153,0.3)" },
@@ -574,6 +607,8 @@ function renderProjects() {
         { bg: "linear-gradient(135deg, #1a0a2e 0%, #3b0764 40%, #150d22 100%)", dots: "rgba(168,85,247,0.5)", dots2: "rgba(236,72,153,0.3)" },
         { bg: "linear-gradient(135deg, #001f2d 0%, #003554 40%, #012a3a 100%)", dots: "rgba(6,182,212,0.5)", dots2: "rgba(14,165,233,0.3)" },
         { bg: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f0f23 100%)", dots: "rgba(99,102,241,0.5)", dots2: "rgba(139,92,246,0.3)" },
+        { bg: "linear-gradient(135deg, #0a2010 0%, #14532d 40%, #052e16 100%)", dots: "rgba(34,197,94,0.5)", dots2: "rgba(16,185,129,0.3)" },
+        { bg: "linear-gradient(135deg, #1a0505 0%, #450a0a 40%, #1c0808 100%)", dots: "rgba(239,68,68,0.5)", dots2: "rgba(249,115,22,0.3)" },
     ];
 
     const makeBanner = (proj, idx) => {
@@ -581,16 +616,15 @@ function renderProjects() {
         return `
         <div class="project-card-banner" style="background:${style.bg}">
           <div class="project-card-banner-inner">
-            <!-- Abstract floating shapes -->
             <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.35" viewBox="0 0 400 120" preserveAspectRatio="xMidYMid slice">
               <circle cx="60"  cy="30"  r="55" fill="${style.dots}"  style="filter:blur(20px)"/>
               <circle cx="320" cy="90"  r="65" fill="${style.dots2}" style="filter:blur(25px)"/>
               <circle cx="200" cy="60"  r="40" fill="${style.dots}"  style="filter:blur(15px);opacity:0.4"/>
             </svg>
-            <!-- Code-like decorative text -->
             <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:rgba(255,255,255,0.12);position:absolute;bottom:8px;left:14px;letter-spacing:0.06em;line-height:1.6">
               ${proj.tech.slice(0, 2).map(t => `<span>${t}</span>`).join(' · ')}
             </div>
+            ${proj.status ? `<div style="position:absolute;top:10px;right:12px;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:rgba(250,204,21,0.9);background:rgba(250,204,21,0.12);border:1px solid rgba(250,204,21,0.25);padding:2px 8px;border-radius:20px;letter-spacing:0.05em">⚡ ${proj.status}</div>` : ""}
           </div>
         </div>`;
     };
@@ -622,10 +656,8 @@ function renderProjects() {
     </div>
   `;
 
-    // Featured: goes directly into the .row g-4
     document.getElementById("projects-featured").innerHTML = featured.map((p, i) => makeCard(p, i)).join("");
 
-    // Rest: own row inside wrapper, with top margin to separate from featured grid
     const restWrap = document.getElementById("projects-rest");
     restWrap.innerHTML = `<div class="row g-4" style="margin-top:1.5rem">${rest.map((p, i) => makeCard(p, featured.length + i)).join("")}</div>`;
     restWrap.style.display = "none";
@@ -711,7 +743,6 @@ function renderContact() {
     </div>
   `).join("");
 
-    // Update CV card text (bilingual)
     const cvTitle = document.getElementById("cv-cta-title");
     const cvDesc = document.getElementById("cv-cta-desc");
     if (cvTitle) cvTitle.textContent = currentLang === "ar" ? "سيرتي الذاتية" : "My Resume";
@@ -747,7 +778,6 @@ function observeReveal() {
     const observer = new IntersectionObserver(
         (entries) => entries.forEach(e => {
             if (e.isIntersecting) {
-                // Stagger siblings inside same parent
                 const parent = e.target.closest('.row, .timeline, .about-stats-wrap, #skills-grid');
                 if (parent) {
                     const siblings = [...parent.querySelectorAll(':scope > * > [class*="reveal"], :scope > [class*="reveal"]')];
