@@ -17,13 +17,13 @@ const DATA = {
             cta_cv: "View CV",
             stats: [
                 { value: "1100+", label: "Training Hours" },
-                { value: "500+", label: "Concurrent Users" },
+                { value: "5+", label: "Projects Shipped" },
                 { value: "200/200", label: "Graduation Score" }
             ]
         },
         about: {
             title: "About Me", subtitle: "Who I am",
-            bio: "Full Stack Developer specializing in ASP.NET Core and Angular - building scalable RESTful APIs and responsive SPAs with Clean Architecture, CQRS, and Redis. Ranked 1st in my department at Fayoum University.",
+            bio: "Full Stack Developer specializing in ASP.NET Core and Angular — building scalable RESTful APIs and responsive SPAs with Clean Architecture, CQRS, and Redis. Experienced in end-to-end feature delivery across backend services, database design, and frontend integration. Ranked 1st in my department at Fayoum University.",
             info: [
                 { icon: "📍", text: "Cairo, Egypt" },
                 { icon: "🎓", text: "B.Sc. Computer Science - Fayoum University (2025)" },
@@ -50,9 +50,9 @@ const DATA = {
                 { icon: "🖥️", name: "Back-End", items: ["C#", "ASP.NET Core", ".NET MVC", "Web API", "JWT", "Identity Framework", "AutoMapper", "SignalR", "Hangfire"] },
                 { icon: "🎨", name: "Front-End", items: ["Angular 21", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "Bootstrap"] },
                 { icon: "🗄️", name: "Database & ORM", items: ["SQL Server", "LINQ", "Entity Framework Core", "Dapper", "Redis"] },
-                { icon: "🏗️", name: "Architecture & Design", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "3-Tier Architecture", "CQRS", "SOLID Principles", "Design Patterns", "Repository Pattern", "Unit of Work"] },
-                { icon: "🎨", name: "Front-End", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "TypeScript", "Angular"] },
-                { icon: "🔧", name: "DevOps & Tools", items: ["Git", "GitHub", "Postman", "Swagger", "Serilog"] },
+                { icon: "🏗️", name: "Architecture & Design", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns", "ABP Framework", "Repository Pattern", "Unit of Work"] },
+                { icon: "🤖", name: "AI Integration", items: ["Ollama", "RAG", "Qdrant", "Vector Databases", "Prompt Engineering", "DeepSeek"] },
+                { icon: "🔧", name: "DevOps & Tools", items: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Serilog"] },
                 { icon: "💻", name: "Programming Languages", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
@@ -63,7 +63,7 @@ const DATA = {
                     id: 1, featured: true,
                     name: "Store Manager System", icon: "🏪",
                     highlight: "Full Stack · Clean Architecture + CQRS",
-                    desc: "Full-stack system: ASP.NET Core 10 REST API with Clean Architecture, CQRS, and MediatR + Angular 21 SPA with signals, OnPush change detection, and feature-based architecture. JWT with claims-based authorization, granular permission guards on API and Angular routes, product lifecycle with inline status changes, soft delete, and full audit history.",
+                    desc: "Full-stack system with 15+ REST API endpoints: ASP.NET Core 10 (Clean Architecture, CQRS, MediatR, FluentValidation) + Angular 21 SPA with signals, OnPush change detection, and feature-based architecture. JWT with claims-based authorization, granular permission guards on API and Angular routes, product lifecycle with inline status changes, soft delete, and full audit history.",
                     tech: ["ASP.NET Core 10", "Angular 21", "Clean Architecture", "CQRS", "EF Core", "JWT", "Tailwind CSS"],
                     github: "https://github.com/Mariam-SM/Store-Manager",
                     demo: null,
@@ -71,15 +71,24 @@ const DATA = {
                 },
                 {
                     id: 2, featured: true,
+                    name: "TaskFlow", icon: "✅",
+                    highlight: "ABP Framework · Docker · Ollama AI",
+                    desc: "Task management system built on ABP Framework (.NET) with modular architecture. Designed 10+ REST API endpoints for task operations and AI-assisted features (summarization, contextual Q&A). Managed data persistence with EF Core and SQL Server. Integrated a local AI service (Ollama) via HTTP calls and containerized the full stack with Docker Compose (3 services).",
+                    tech: ["ABP Framework", "ASP.NET Core", "EF Core", "SQL Server", "Ollama", "Docker"],
+                    github: "https://github.com/Mariam-SM",
+                    demo: null,
+                },
+                {
+                    id: 3, featured: true,
                     name: "PetCore", icon: "🐾",
-                    highlight: "Full pet care ecosystem API",
-                    desc: "Comprehensive backend API ecosystem for pet care management. Covers pet & vet management, appointment booking, product marketplace with hierarchical category filtering, JWT-based auth with Owner & Vet roles, and chatbot integration.",
+                    highlight: "7+ domain modules · Full pet care ecosystem",
+                    desc: "Comprehensive backend API for pet care management with 7+ domain modules: pet & vet management, appointment booking, product marketplace with hierarchical category filtering, JWT-based auth with Owner & Vet roles, and chatbot integration.",
                     tech: ["ASP.NET Core", "Clean Architecture", "EF Core", "JWT", "Redis", "CQRS"],
                     github: "https://github.com/Mariam-SM/PetCore",
                     demo: null,
                 },
                 {
-                    id: 3, featured: true,
+                    id: 4, featured: false,
                     name: "Order Management System", icon: "📦",
                     highlight: "25+ REST endpoints",
                     desc: "Full-featured REST API built using Clean Architecture. Includes basket management, order processing, invoices, JWT-based RBAC, and Stripe payment gateway integration.",
@@ -88,7 +97,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 4, featured: false,
+                    id: 5, featured: false,
                     name: "E-Commerce Backend API", icon: "🛒",
                     highlight: "REST API + JWT Security · 60% faster with Redis",
                     desc: "RESTful backend using Generic Repository & Unit of Work patterns. JWT auth for 500+ accounts, Stripe integration, Redis caching (60% faster response), and centralized exception handling.",
@@ -97,7 +106,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 5, featured: false,
+                    id: 6, featured: false,
                     name: "Company Management System", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "Web app with multi-auth (Google, Facebook, Email), KitMail/Twilio SMS recovery, and dynamic search. Built with 3-Tier Architecture and AJAX for 50% better interactivity.",
@@ -106,7 +115,7 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
-                    id: 6, featured: false,
+                    id: 7, featured: false,
                     name: "EduVerse – AI E-Learning", icon: "🎓",
                     highlight: "500+ concurrent users",
                     desc: "Graduation project — 200/200. ASP.NET Core backend serving 500+ concurrent users, GPT-4.1 integration, 85% accuracy code similarity detection, and automated attendance tracking.",
@@ -115,7 +124,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 7, featured: false,
+                    id: 8, featured: false,
                     name: "Learnify – Course Portal", icon: "📚",
                     highlight: "Lecture streaming",
                     desc: "Online course portal for instructors and students with lecture streaming and enrollment features. Built using ASP.NET MVC, EF Core, and LINQ.",
@@ -124,7 +133,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 8, featured: false,
+                    id: 9, featured: false,
                     name: "Examination Management System", icon: "📝",
                     highlight: "OOP design",
                     desc: "Desktop system for managing exams and grading. Applies modular OOP and efficient data structures for result generation.",
@@ -133,7 +142,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 9, featured: false,
+                    id: 10, featured: false,
                     name: "Tourism in Fayoum", icon: "🗺️",
                     highlight: "100% cross-browser",
                     desc: "Static informational website promoting Fayoum's tourist attractions with interactive navigation and fully responsive design.",
@@ -151,7 +160,9 @@ const DATA = {
                     period: "Apr 2026 – Present", type: "work",
                     cert: null,
                     points: [
-                        "Developing a full-stack application using ASP.NET Core and Angular, with hands-on experience in end-to-end development."
+                        "Contributed to 2 full-stack projects over 3 months using ASP.NET Core and Angular, delivering features across both frontend and backend layers.",
+                        "Built 25+ REST API endpoints across 2 projects (TaskFlow and Store Manager) applying CQRS pattern and ABP Framework modular architecture.",
+                        "Worked with ABP Framework to structure domain logic, application services, and API layers across multiple modules."
                     ]
                 },
                 {
@@ -159,8 +170,7 @@ const DATA = {
                     period: "Oct 2025 – Feb 2026", type: "work",
                     cert: null,
                     points: [
-                        "Delivered CS50 curriculum to 20+ students, designing exercises and mentoring sessions.",
-                        "Improved student comprehension, problem-solving confidence, and course completion engagement."
+                        "Mentored 20+ students across 5 structured sessions, designing graded exercises that improved problem-solving skills and engagement."
                     ]
                 },
                 {
@@ -229,17 +239,17 @@ const DATA = {
             cta_cv: "عرض السيرة الذاتية",
             stats: [
                 { value: "+1100", label: "ساعة تدريب" },
-                { value: "+500", label: "مستخدم متزامن" },
+                { value: "+5", label: "مشروع منجز" },
                 { value: "200/200", label: "درجة التخرج" }
             ]
         },
         about: {
             title: "عني", subtitle: "من أنا",
-            bio: "مطورةمطورة Full Stack متخصصة في ASP.NET Core وAngular — أبني APIs قابلة للتوسع وتطبيقات SPA بـ Clean Architecture وCQRS وRedis. الأولى على قسمي في جامعة الفيوم.",
+            bio: "مطورة Full Stack متخصصة في ASP.NET Core وAngular — أبني APIs قابلة للتوسع وتطبيقات SPA بـ Clean Architecture وCQRS وRedis. خبرة في تسليم الـ features من الباك-إند للفرونت-إند مروراً بتصميم قواعد البيانات. الأولى على قسمي في جامعة الفيوم.",
             info: [
                 { icon: "📍", text: "مدينة نصر، القاهرة، مصر" },
                 { icon: "🎓", text: "بكالوريوس علوم الحاسب — جامعة الفيوم (2025)" },
-                { icon: "⭐", text: "المعدل: 3.77 / 4.0 (94.6%) — الأولى على قسم الحوسبة والمعلوماتية الحيوية التابع لقسم علوم حاسب" },
+                { icon: "⭐", text: "المعدل: 3.77 / 4.0 (94.6%) — الأولى على قسم الحوسبة والمعلوماتية الحيوية" },
                 { icon: "🏆", text: "مشروع التخرج: 200/200 (درجة كاملة)" },
                 { icon: "🌐", text: "اللغات: العربية (أم) · الإنجليزية (طلاقة)" },
                 { icon: "🏅", text: "تكريم النقابة العلمية — الأولى على قسم الحوسبة والمعلوماتية الحيوية", href: "https://drive.google.com/file/d/1O6vaXcY3knq3h3H1qPuRyI8V7gHflpj5/view?usp=drive_link" }
@@ -262,9 +272,9 @@ const DATA = {
                 { icon: "🖥️", name: "الباك-إند", items: ["C#", "ASP.NET Core", ".NET MVC", "Web API", "JWT", "Identity Framework", "AutoMapper", "SignalR", "Hangfire"] },
                 { icon: "🎨", name: "الفرونت-إند", items: ["Angular 21", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "Bootstrap"] },
                 { icon: "🗄️", name: "قواعد البيانات", items: ["SQL Server", "LINQ", "Entity Framework Core", "Dapper", "Redis"] },
-                { icon: "🏗️", name: "المعمارية والتصميم", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "3-Tier Architecture", "CQRS", "SOLID Principles", "Design Patterns", "Repository Pattern", "Unit of Work"] },
-                { icon: "🎨", name: "الفرونت-إند", items: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "TypeScript", "Angular"] },
-                { icon: "🔧", name: "الأدوات", items: ["Git", "GitHub", "Postman", "Swagger", "Serilog"] },
+                { icon: "🏗️", name: "المعمارية والتصميم", items: ["Clean Architecture", "Onion Architecture", "Layered Architecture", "CQRS", "SOLID Principles", "Design Patterns", "ABP Framework", "Repository Pattern", "Unit of Work"] },
+                { icon: "🤖", name: "تكامل الذكاء الاصطناعي", items: ["Ollama", "RAG", "Qdrant", "Vector Databases", "Prompt Engineering", "DeepSeek"] },
+                { icon: "🔧", name: "الأدوات", items: ["Git", "GitHub", "Docker", "Postman", "Swagger", "Serilog"] },
                 { icon: "💻", name: "لغات البرمجة", items: ["C#", "C++", "Python", "JavaScript", "PHP", "R"] }
             ]
         },
@@ -275,23 +285,32 @@ const DATA = {
                     id: 1, featured: true,
                     name: "نظام إدارة المتجر", icon: "🏪",
                     highlight: "Full Stack · Clean Architecture + CQRS",
-                    desc: "نظام Full Stack: ASP.NET Core 10 بـ Clean Architecture وCQRS وMediatR + Angular 21 بـ Signals وOnPush ومعمارية قائمة على الـ Features. JWT بصلاحيات تفصيلية على الـ API وRoutes، وإدارة دورة حياة المنتج مع تغيير الحالة، Soft Delete، وسجل تدقيق كامل.",
+                    desc: "نظام Full Stack بـ 15+ REST API endpoint: ASP.NET Core 10 بـ Clean Architecture وCQRS وMediatR + Angular 21 بـ Signals وOnPush ومعمارية قائمة على الـ Features. JWT بصلاحيات تفصيلية، Soft Delete، وسجل تدقيق كامل.",
                     tech: ["ASP.NET Core 10", "Angular 21", "Clean Architecture", "CQRS", "EF Core", "JWT", "Tailwind CSS"],
                     github: "https://github.com/Mariam-SM/Store-Manager",
-                    demo: null,
-                },
-                {
-                    id: 2, featured: true,
-                    name: "PetCore", icon: "🐾",
-                    highlight: "نظام متكامل لرعاية الحيوانات",
-                    desc: "API شامل لإدارة منظومة رعاية الحيوانات الأليفة. يغطي إدارة الحيوانات والأطباء، حجز المواعيد، سوق المنتجات بتصفية هرمية، JWT بأدوار Owner وVet، وتكامل chatbot.",
-                    tech: ["ASP.NET Core", "Clean Architecture", "EF Core", "JWT", "Redis", "CQRS"],
-                    github: "https://github.com/Mariam-SM/PetCore",
                     demo: null,
                     status: "In Progress"
                 },
                 {
+                    id: 2, featured: true,
+                    name: "TaskFlow", icon: "✅",
+                    highlight: "ABP Framework · Docker · Ollama AI",
+                    desc: "نظام إدارة مهام مبني على ABP Framework بمعمارية وحدية. 10+ REST API endpoint لعمليات المهام وميزات AI (تلخيص، أسئلة وأجوبة). EF Core و SQL Server لإدارة البيانات، تكامل Ollama عبر HTTP، وـ Docker Compose لـ 3 services.",
+                    tech: ["ABP Framework", "ASP.NET Core", "EF Core", "SQL Server", "Ollama", "Docker"],
+                    github: "https://github.com/Mariam-SM",
+                    demo: null,
+                },
+                {
                     id: 3, featured: true,
+                    name: "PetCore", icon: "🐾",
+                    highlight: "7+ وحدات · نظام متكامل لرعاية الحيوانات",
+                    desc: "API شامل لإدارة منظومة رعاية الحيوانات الأليفة بـ 7+ وحدات: إدارة الحيوانات والأطباء، حجز المواعيد، سوق المنتجات بتصفية هرمية، JWT بأدوار Owner وVet.",
+                    tech: ["ASP.NET Core", "Clean Architecture", "EF Core", "JWT", "Redis", "CQRS"],
+                    github: "https://github.com/Mariam-SM/PetCore",
+                    demo: null,
+                },
+                {
+                    id: 4, featured: false,
                     name: "نظام إدارة الطلبات", icon: "📦",
                     highlight: "25+ REST endpoint",
                     desc: "API متكامل بـ Clean Architecture. يشمل إدارة السلة، معالجة الطلبات، الفواتير، صلاحيات JWT، ودفع Stripe.",
@@ -300,16 +319,16 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 4, featured: false,
+                    id: 5, featured: false,
                     name: "منصة API للتجارة الإلكترونية", icon: "🛒",
                     highlight: "REST API + JWT · أسرع 60% مع Redis",
-                    desc: "باك-إند RESTful بـ Generic Repository و Unit of Work. JWT لحماية 500+ حساب، Stripe، Redis caching (أسرع 60%)، ومعالجة مركزية للأخطاء.",
+                    desc: "باك-إند RESTful بـ Generic Repository و Unit of Work. JWT لحماية 500+ حساب، Stripe، Redis caching (أسرع 60%).",
                     tech: ["ASP.NET Core", "EF Core", "JWT", "Stripe", "Redis"],
                     github: "https://github.com/Mariam-SM/E-Commerce",
                     demo: null
                 },
                 {
-                    id: 5, featured: false,
+                    id: 6, featured: false,
                     name: "نظام إدارة الشركات", icon: "🏢",
                     highlight: "Multi-auth + SMS",
                     desc: "تطبيق ويب بتسجيل دخول متعدد (جوجل، فيسبوك، إيميل)، استعادة بالـ SMS، وبحث ديناميكي. 3-Tier Architecture مع AJAX.",
@@ -318,25 +337,25 @@ const DATA = {
                     demo: "https://companymvcproject02.runasp.net/"
                 },
                 {
-                    id: 6, featured: false,
+                    id: 7, featured: false,
                     name: "EduVerse – منصة تعلم ذكية", icon: "🎓",
                     highlight: "+500 مستخدم متزامن",
-                    desc: "مشروع تخرج بدرجة 200/200. باك-إند يخدم 500+ مستخدم متزامن، تكامل GPT-4.1، كشف تشابه الكود بدقة 85%، وتتبع حضور آلي.",
+                    desc: "مشروع تخرج بدرجة 200/200. باك-إند يخدم 500+ مستخدم متزامن، تكامل GPT-4.1، كشف تشابه الكود بدقة 85%.",
                     tech: ["ASP.NET Core", "Flutter", "GPT-4.1", "SQL Server"],
                     github: "https://github.com/Mariam-SM/EduVerse",
                     demo: null
                 },
                 {
-                    id: 7, featured: false,
+                    id: 8, featured: false,
                     name: "Learnify – بوابة الدورات", icon: "📚",
                     highlight: "بث المحاضرات",
-                    desc: "بوابة دورات للمدرسين والطلاب مع بث المحاضرات والتسجيل. ASP.NET MVC وـ EF Core.",
+                    desc: "بوابة دورات للمدرسين والطلاب مع بث المحاضرات والتسجيل.",
                     tech: ["ASP.NET MVC", "EF Core", "SQL", "LINQ"],
                     github: "https://github.com/Mariam-SM/Learnify",
                     demo: null
                 },
                 {
-                    id: 8, featured: false,
+                    id: 9, featured: false,
                     name: "نظام إدارة الامتحانات", icon: "📝",
                     highlight: "تصميم OOP",
                     desc: "نظام سطح مكتب لإدارة الامتحانات والتصحيح بتطبيق OOP معياري وهياكل بيانات فعالة.",
@@ -345,7 +364,7 @@ const DATA = {
                     demo: null
                 },
                 {
-                    id: 9, featured: false,
+                    id: 10, featured: false,
                     name: "السياحة في الفيوم", icon: "🗺️",
                     highlight: "100% متوافق",
                     desc: "موقع معلوماتي يروج لمعالم الفيوم بتصميم متجاوب 100% مع جميع المتصفحات.",
@@ -363,7 +382,9 @@ const DATA = {
                     period: "أبريل 2026 – الآن", type: "work",
                     cert: null,
                     points: [
-                        "تطوير تطبيق Full Stack بـ ASP.NET Core وAngular، مع خبرة عملية في التطوير الشامل عبر دورة حياة المنتج الكاملة."
+                        "ساهمت في 2 مشاريع Full Stack خلال 3 أشهر بـ ASP.NET Core وAngular، مع تسليم features على مستوى الباك-إند والفرونت-إند.",
+                        "بناء 25+ REST API endpoint عبر مشروعين (TaskFlow وStore Manager) بـ CQRS وABP Framework.",
+                        "العمل بـ ABP Framework لهيكلة Domain Logic وApplication Services وAPI Layers."
                     ]
                 },
                 {
@@ -371,8 +392,7 @@ const DATA = {
                     period: "أكتوبر 2025 – فبراير 2026", type: "work",
                     cert: null,
                     points: [
-                        "تدريس منهج CS50 لأكثر من 20 طالباً مع تصميم تمارين وجلسات إرشادية.",
-                        "تحسين فهم الطلاب وثقتهم في حل المشكلات ومعدلات إتمام الدورة."
+                        "إرشاد 20+ طالب عبر 5 جلسات منظمة، وتصميم تمارين متدرجة حسنت مهارات حل المشكلات والتفاعل."
                     ]
                 },
                 {
@@ -428,7 +448,7 @@ const DATA = {
 //   STATE
 // ===========================
 let currentLang = localStorage.getItem("ms_lang") || "en";
-let currentTheme = "dark"; // dark is always the default
+let currentTheme = "dark";
 
 function t(path) {
     const keys = path.split(".");
@@ -609,6 +629,7 @@ function renderProjects() {
         { bg: "linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f0f23 100%)", dots: "rgba(99,102,241,0.5)", dots2: "rgba(139,92,246,0.3)" },
         { bg: "linear-gradient(135deg, #0a2010 0%, #14532d 40%, #052e16 100%)", dots: "rgba(34,197,94,0.5)", dots2: "rgba(16,185,129,0.3)" },
         { bg: "linear-gradient(135deg, #1a0505 0%, #450a0a 40%, #1c0808 100%)", dots: "rgba(239,68,68,0.5)", dots2: "rgba(249,115,22,0.3)" },
+        { bg: "linear-gradient(135deg, #0d1117 0%, #161b22 40%, #0d1117 100%)", dots: "rgba(88,166,255,0.5)", dots2: "rgba(63,185,80,0.3)" },
     ];
 
     const makeBanner = (proj, idx) => {
